@@ -1,5 +1,5 @@
 # seedTools
 
-A R package with a collection of functions to simplify seed research tasks
+A R package with a collection of functions to simplify seed biology related
 
-![](images/seedTools.png){width="120"}
+![](images/seedTools2.png)
