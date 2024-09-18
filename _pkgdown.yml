@@ -1,4 +1,26 @@
-url: ~
+url: https://pgomba.github.io/seedTools
+home:
+  title: seedTools. R functions for your daily seed aventures
+  description: An R package with a collection of functions to simplify seed biology related tasks
 template:
   bootstrap: 5
+  opengraph:
+    image:
+      src: man/figures/logo.png
+      alt: "An R package with a collection of functions to simplify seed biology related tasks"
+    twitter:
+      creator: "@pagomba"
+      card: summary_large_image
+navbar:
+  structure:
+    right: [twitter, github]
+  components:
+    twitter:
+      icon: fa-twitter
+      href: http://twitter.com/pagomba
+      aria-label: Twitter
+    github:
+      icon: fa-github
+      href: https://github.com/pgomba/seedTools
+      aria-label: Github
 

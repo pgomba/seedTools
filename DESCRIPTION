@@ -1,4 +1,5 @@
 Package: seedTools
+URL: https://pgomba.github.io/seedTools
 Type: Package
 Title: R functions for your daily seed adventures
 Version: 0.1.0
