@@ -1,8 +1,10 @@
 pandoc: 3.1.1
 pkgdown: 2.1.1
 pkgdown_sha: ~
-articles: {}
-last_built: 2024-09-19T12:32Z
+articles:
+  articles/lithium_chloride: lithium_chloride.html
+  articles/t50: t50.html
+last_built: 2024-09-19T12:50Z
 urls:
   reference: https://pgomba.github.io/seedTools/reference
   article: https://pgomba.github.io/seedTools/articles

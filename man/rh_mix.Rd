@@ -7,9 +7,13 @@
 rh_mix(rh1, vol1, rh2, vol2)
 }
 \arguments{
-\item{rh1}{The relative humidity percentage value of solution number two}
+\item{rh1}{The relative humidity percentage value of solution number one}
 
-\item{vol1}{The volume 'in Litres' of solution rh2}
+\item{vol1}{The volume 'in Litres' of solution rh1}
+
+\item{rh2}{The relative humidity percentage value of solution number two}
+
+\item{vol2}{The volume 'in Litres' of solution rh2}
 }
 \value{
 a string with mixed solution relative humidity percentage
