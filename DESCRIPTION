@@ -2,7 +2,7 @@ Package: seedTools
 URL: https://pgomba.github.io/seedTools
 Type: Package
 Title: R functions for your daily seed adventures
-Version: 0.1.0
+Version: 0.0.1
 Author: Pablo Gomez
 Maintainer: Pablo Gomez <pablogomezbr@hotmail.es>
 Description: seedTools aims to be a hub of R functions designed to facilitate common tasks in seed science. 
