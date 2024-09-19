@@ -1,6 +1,4 @@
-#' Calculate neccesary changes to lithium chloride solutions to achieve target relative humidity
-#'
-#' Obtain T50 values using Coolbear et al. (1984) formula modified by Farooq et al.(2005). Vector containing scoring days must have same length than vector containing cumulative germination data
+#' Calculate necessary changes to lithium chloride solutions to achieve target relative humidity
 #'
 #' @param initial_rh The relative humidity percentage value of the solution to be modified
 #' @param desired_rh The percentage value of the desired relative humidity
