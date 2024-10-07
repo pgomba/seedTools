@@ -19,20 +19,18 @@ rh_modify<-function(initial_rh,desired_rh,initial_volume){
 
   if (initial_conc>desired_conc) {
 
-    print("Volume of water to be added to your solution:")
-
     final_volume<-(initial_conc*initial_volume)/desired_conc
     add_w<-final_volume-initial_volume
 
-    print(paste(round(add_w,2),"L."))
+    print(paste("Volume of water to be added to your solution:",round(add_w,2),"L."))
 
 
   }else{
-    print("Lithium chloride to be added:")
+
 
     LiCl_to_add<-(desired_conc-initial_conc)*initial_volume
 
-    print(paste(round(LiCl_to_add,2),"g."))
+    print(paste("Lithium chloride to be added:"),round(LiCl_to_add,2),"g.")
 
   }
 }
