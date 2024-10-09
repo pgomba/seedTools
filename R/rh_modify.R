@@ -13,7 +13,7 @@
 
 rh_modify<-function(initial_rh,desired_rh,initial_volume,verbose=TRUE){
 
-  if (verbose{
+  if (verbose){
   message("Reminder: Ensure all values are in g. and L.")
     }
 
