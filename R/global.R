@@ -1,2 +1,3 @@
 utils::globalVariables(c("rh",
-                         "value"))
+                         "value",
+                         "solution"))
