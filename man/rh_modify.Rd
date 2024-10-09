@@ -4,7 +4,7 @@
 \alias{rh_modify}
 \title{Calculate necessary changes to lithium chloride solutions to achieve target relative humidity}
 \usage{
-rh_modify(initial_rh, desired_rh, initial_volume)
+rh_modify(initial_rh, desired_rh, initial_volume, verbose = TRUE)
 }
 \arguments{
 \item{initial_rh}{The relative humidity percentage value of the solution to be modified}
@@ -12,6 +12,8 @@ rh_modify(initial_rh, desired_rh, initial_volume)
 \item{desired_rh}{The percentage value of the desired relative humidity}
 
 \item{initial_volume}{The volume 'in Litres' of the initial solution}
+
+\item{verbose}{Logical. If TRUE, suppresses messages or output during function execution.}
 }
 \value{
 a string with instructions to modify the solution

@@ -3,14 +3,14 @@
 #' @param initial_rh The relative humidity percentage value of the solution to be modified
 #' @param desired_rh The percentage value of the desired relative humidity
 #' @param initial_volume The volume 'in Litres' of the initial solution
-#'
+#' @param verbose Logical. If TRUE, suppresses messages or output during function execution.
 #' @return a string with instructions to modify the solution
 #' @export
 #'
 #' @examples
 #' rh_modify(initial_rh=20,desired_rh=40,initial_volume=0.5)
 
-rh_modify<-function(initial_rh,desired_rh,initial_volume){
+rh_modify<-function(initial_rh,desired_rh,initial_volume,verbose=TRUE){
 
   message("Reminder: Ensure all values are in g. and L.")
 
@@ -22,7 +22,7 @@ rh_modify<-function(initial_rh,desired_rh,initial_volume){
     final_volume<-(initial_conc*initial_volume)/desired_conc
     add_w<-final_volume-initial_volume
 
-    print(paste("Volume of water to be added to your solution:",round(add_w,2),"L."))
+    text<- paste("Volume of water to be added to your solution:",round(add_w,2),"L.")
 
 
   }else{
@@ -30,7 +30,10 @@ rh_modify<-function(initial_rh,desired_rh,initial_volume){
 
     LiCl_to_add<-(desired_conc-initial_conc)*initial_volume
 
-    print(paste("Lithium chloride to be added:"),round(LiCl_to_add,2),"g.")
+    text<-paste("Lithium chloride to be added:",round(LiCl_to_add,2),"g.")
+
 
   }
+
+  text
 }

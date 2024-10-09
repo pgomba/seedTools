@@ -4,6 +4,7 @@
 #' @param vol1 The volume 'in Litres' of solution rh1
 #' @param rh2 The relative humidity percentage value of solution number two
 #' @param vol2 The volume 'in Litres' of solution rh2
+#' @param verbose Logical. If TRUE, suppresses messages or output during function execution.
 #'
 #' @return a string with mixed solution relative humidity percentage
 #' @export
@@ -12,7 +13,7 @@
 #' rh_mix(rh1=50,vol1=0.5,rh2=70,vol2=0.25)
 #'
 
-rh_mix<-function(rh1,vol1,rh2,vol2){
+rh_mix<-function(rh1,vol1,rh2,vol2,verbose=TRUE){
 
   message("Reminder: Ensure volumes are L.")
 
@@ -26,7 +27,9 @@ rh_mix<-function(rh1,vol1,rh2,vol2){
 
   new_rh<- (116.0672 - 8.3123) / (1 + exp((new_conc - 28.6565) / 16.8639)) + 8.3123
 
-  print(paste0("New solution will achieve a relative humidity of ", round(new_rh,2),"%"))
+  text<-paste0("New solution will achieve a relative humidity of ", round(new_rh,2),"%")
+
+  text
 
 }
 

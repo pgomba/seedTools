@@ -4,7 +4,7 @@
 \alias{rh_mix}
 \title{Calculates the result relative humidity of mixing two lithium chloride solutions}
 \usage{
-rh_mix(rh1, vol1, rh2, vol2)
+rh_mix(rh1, vol1, rh2, vol2, verbose = TRUE)
 }
 \arguments{
 \item{rh1}{The relative humidity percentage value of solution number one}
@@ -14,6 +14,8 @@ rh_mix(rh1, vol1, rh2, vol2)
 \item{rh2}{The relative humidity percentage value of solution number two}
 
 \item{vol2}{The volume 'in Litres' of solution rh2}
+
+\item{verbose}{Logical. If TRUE, suppresses messages or output during function execution.}
 }
 \value{
 a string with mixed solution relative humidity percentage
