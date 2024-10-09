@@ -11,6 +11,10 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
 Config/Needs/website: rmarkdown
+Imports:
+    magrittr,
+    ggplot2,
+    dplyr
 Suggests: 
     knitr,
     rmarkdown
