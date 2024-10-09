@@ -20,7 +20,7 @@ plot_rh_modify<-function(rh_initial,desired_rh){
 
   #Change curve
 
-  predict2<-data.frame(rh=seq(rh_initial,desired_rh,1))%>%
+  predict2<-data.frame(rh=seq(rh_initial,desired_rh,by=sign(desired_rh-rh_initial)))%>%
     mutate(gl=28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))
 
   #Input points
