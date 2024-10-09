@@ -2,3 +2,4 @@
 
 -   `coolbear()` function added
 -   `rh_mix()` and `rh_modify()` functions added
+-   `plot_rh()` functions added
