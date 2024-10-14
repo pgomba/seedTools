@@ -15,19 +15,19 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2){
 
   # data for plot
   predict<-data.frame(rh=seq(11,99,1))%>%
-    mutate(gl=28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))
+    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))*10)
 
   # predicting new mix
 
-  lc_conc1<-28.6565 + 16.8639 * log((107.7549/(rh1 - 8.3123)) - 1)
+  lc_conc1<-(28.6565 + 16.8639 * log((107.7549/(rh1 - 8.3123)) - 1))*10
   lc_g1<-lc_conc1*vol1
 
-  lc_conc2<-28.6565 + 16.8639 * log((107.7549/(rh2 - 8.3123)) - 1)
+  lc_conc2<-(28.6565 + 16.8639 * log((107.7549/(rh2 - 8.3123)) - 1))*10
   lc_g2<-lc_conc2*vol2
 
   new_conc<-(lc_g1+lc_g2)/(vol1+vol2)
 
-  new_rh<- (116.0672 - 8.3123) / (1 + exp((new_conc - 28.6565) / 16.8639)) + 8.3123
+  new_rh<- (116.0672 - 8.3123) / (1 + exp(((new_conc/10) - 28.6565) / 16.8639)) + 8.3123
 
   data_to_plot<-data.frame(rh=c(rh1,rh2,new_rh),
                            concentration=c(lc_conc1,lc_conc2,new_conc),
@@ -36,10 +36,10 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2){
   #Change curve
 
   predict2<-data.frame(rh=seq(rh1,new_rh,by=sign(new_rh-rh1)))%>%
-    mutate(gl=28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))
+    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))*10)
 
   predict3<-data.frame(rh=seq(rh2,new_rh,by=sign(new_rh-rh2)))%>%
-    mutate(gl=28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))
+    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))*10)
 
 
   ## Plot
@@ -55,11 +55,12 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2){
    geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=2,colour="#ea801c")+
 
    geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#1a80bb")+
-   geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+4,label="Final"))+
+   geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40,label="Final"))+
    geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                 linetype="dashed",colour="#1a80bb")+
 
-   theme_classic()
+   theme_classic()+
+   labs(y="RH %", x="LiCl (g/L)")
 
  plot
 }

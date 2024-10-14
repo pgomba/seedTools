@@ -17,8 +17,8 @@ rh_modify<-function(initial_rh,desired_rh,initial_volume,verbose=TRUE){
   message("Reminder: Ensure all values are in g. and L.")
     }
 
-  initial_conc<-28.6565 + 16.8639 * log((107.7549/(initial_rh - 8.3123)) - 1)
-  desired_conc<-28.6565 + 16.8639 * log((107.7549/(desired_rh - 8.3123)) - 1)
+  initial_conc<-(28.6565 + 16.8639 * log((107.7549/(initial_rh - 8.3123)) - 1))*10 #g/ml
+  desired_conc<-(28.6565 + 16.8639 * log((107.7549/(desired_rh - 8.3123)) - 1))*10 #g/ml
 
   if (initial_conc>desired_conc) {
 

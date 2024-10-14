@@ -17,15 +17,15 @@ rh_mix<-function(rh1,vol1,rh2,vol2,verbose=TRUE){
 
   message("Reminder: Ensure volumes are L.")
 
-  lc_conc1<-28.6565 + 16.8639 * log((107.7549/(rh1 - 8.3123)) - 1)
+  lc_conc1<-(28.6565 + 16.8639 * log((107.7549/(rh1 - 8.3123)) - 1))*10
   lc_g1<-lc_conc1*vol1
 
-  lc_conc2<-28.6565 + 16.8639 * log((107.7549/(rh2 - 8.3123)) - 1)
+  lc_conc2<-(28.6565 + 16.8639 * log((107.7549/(rh2 - 8.3123)) - 1))*10
   lc_g2<-lc_conc2*vol2
 
   new_conc<-(lc_g1+lc_g2)/(vol1+vol2)
 
-  new_rh<- (116.0672 - 8.3123) / (1 + exp((new_conc - 28.6565) / 16.8639)) + 8.3123
+  new_rh<- (116.0672 - 8.3123) / (1 + exp(((new_conc/10) - 28.6565) / 16.8639)) + 8.3123
 
   text<-paste0("New solution will achieve a relative humidity of ", round(new_rh,2),"%")
 
