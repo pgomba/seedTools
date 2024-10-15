@@ -63,19 +63,13 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
                 linetype="dashed",colour="#1a80bb")+
 
    theme_classic()+
-   labs(y="RH %", x="LiCl (g/L)")
+   labs(y="Relative Humidity (%)", x="LiCl (g/L)")
 
   }else{
 
     plot<- ggplot(predict,aes(x=gl,y=rh))+
 
       geom_line()+
-
-      theme(panel.background =element_rect(fill="#212529"),
-            plot.background = element_rect(fill="#212529"),
-            axis.title=element_text(colour = "white"),
-            axis.text=element_text(colour = "white"),
-            axis.line = element_line(colour = "white") )+
 
       geom_line(data=predict2,linewidth=1.1,colour="darkred")+
       geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=2,colour="#ea801c")+
@@ -89,7 +83,12 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
                    linetype="dashed",colour="#1a80bb")+
 
       theme_classic()+
-      labs(y="Relative Humidity (%)", x="LiCl (g/L)")
+      labs(y="Relative Humidity (%)", x="LiCl (g/L)")+
+      theme(panel.background =element_rect(fill="#212529"),
+            plot.background = element_rect(fill="#212529"),
+            axis.title=element_text(colour = "white"),
+            axis.text=element_text(colour = "white"),
+            axis.line = element_line(colour = "white") )
 
 
  }
