@@ -69,7 +69,7 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
 
     plot<- ggplot(predict,aes(x=gl,y=rh))+
 
-      geom_line()+
+      geom_line(colour="white")+
 
       geom_line(data=predict2,linewidth=1.1,colour="darkred")+
       geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=2,colour="#ea801c")+
@@ -78,14 +78,14 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
       geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=2,colour="#ea801c")+
 
       geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#1a80bb")+
-      geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40,label="Final"))+
+      geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40,label="Final",colour="white"))+
       geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                    linetype="dashed",colour="#1a80bb")+
 
       theme_classic()+
       labs(y="Relative Humidity (%)", x="LiCl (g/L)")+
       theme(panel.background =element_rect(fill="#212529"),
-            plot.background = element_rect(fill="#212529"),
+            plot.background = element_rect(fill="#212529",colour="#212529"),
             axis.title=element_text(colour = "white"),
             axis.text=element_text(colour = "white"),
             axis.line = element_line(colour = "white") )

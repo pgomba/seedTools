@@ -61,7 +61,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
       theme_classic()+
       theme(panel.background =element_rect(fill="#212529"),
-            plot.background = element_rect(fill="#212529"),
+            plot.background = element_rect(fill="#212529",colour="#212529"),
             axis.title=element_text(colour = "white"),
             axis.text=element_text(colour = "white"),
             axis.line = element_line(colour = "white") )+
