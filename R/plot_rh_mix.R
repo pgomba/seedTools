@@ -4,6 +4,7 @@
 #' @param vol1 The volume 'in Litres' of solution rh1
 #' @param rh2 The relative humidity percentage value of solution number two
 #' @param vol2 The volume 'in Litres' of solution rh2#'
+#' @param theme chose between light and dark plot background
 #' @return a plot
 #' @import magrittr ggplot2 dplyr
 #' @export
@@ -11,7 +12,7 @@
 #' plot_rh_mix(40,3,60,1)
 
 
-plot_rh_mix<-function(rh1,vol1,rh2,vol2){
+plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
 
   # data for plot
   predict<-data.frame(rh=seq(11,99,1))%>%
@@ -44,6 +45,8 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2){
 
   ## Plot
 
+  if (theme=="light") {
+
  plot<- ggplot(predict,aes(x=gl,y=rh))+
 
    geom_line()+
@@ -61,6 +64,35 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2){
 
    theme_classic()+
    labs(y="RH %", x="LiCl (g/L)")
+
+  }else{
+
+    plot<- ggplot(predict,aes(x=gl,y=rh))+
+
+      geom_line()+
+
+      theme(panel.background =element_rect(fill="#212529"),
+            plot.background = element_rect(fill="#212529"),
+            axis.title=element_text(colour = "white"),
+            axis.text=element_text(colour = "white"),
+            axis.line = element_line(colour = "white") )+
+
+      geom_line(data=predict2,linewidth=1.1,colour="darkred")+
+      geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=2,colour="#ea801c")+
+
+      geom_line(data=predict3,linewidth=1.1,colour="green")+
+      geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=2,colour="#ea801c")+
+
+      geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#1a80bb")+
+      geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40,label="Final"))+
+      geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
+                   linetype="dashed",colour="#1a80bb")+
+
+      theme_classic()+
+      labs(y="Relative Humidity (%)", x="LiCl (g/L)")
+
+
+ }
 
  plot
 }

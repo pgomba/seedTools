@@ -2,13 +2,14 @@
 #'
 #' @param rh_initial The relative humidity percentage value of the solution to be modified
 #' @param desired_rh The percentage value of the desired relative humidity
+#' @param theme chose between light and dark plot background
 #' @return a plot
 #' @import magrittr ggplot2 dplyr
 #' @export
 #' @examples
 #' plot_rh_modify(40,60)
 
-plot_rh_modify<-function(rh_initial,desired_rh){
+plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
 
   gl_initial<-(28.6565 + 16.8639 * log((107.7549/(rh_initial - 8.3123)) - 1)*10)
   gl_final<-(28.6565 + 16.8639 * log((107.7549/(desired_rh - 8.3123)) - 1)*10)
@@ -31,25 +32,57 @@ plot_rh_modify<-function(rh_initial,desired_rh){
 
   # Plot
 
-  plot<-ggplot(predict,aes(x=gl,y=rh))+
-    geom_line(colour="black")+
-    geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
-    theme_classic()+
+  if (theme=="light") {
 
-    geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
-                 linetype="dashed",colour="#ea801c")+
-    geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
-               size=4,colour="#ea801c")+
-    geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial")+
+    plot<-ggplot(predict,aes(x=gl,y=rh))+
+      geom_line(colour="black")+
+      geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
+      theme_classic()+
+
+      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
+                   linetype="dashed",colour="#ea801c")+
+      geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
+                 size=4,colour="#ea801c")+
+      geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial")+
 
 
-    geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
-                 linetype="dashed",colour="#1a80bb")+
-    geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
-               size=4,colour="#1a80bb")+
-    geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final")+
+      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
+                   linetype="dashed",colour="#1a80bb")+
+      geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
+                 size=4,colour="#1a80bb")+
+      geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final")+
 
-    labs(x="LiCl (g/l)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/l)",y="Relative Humidity (%)")
+
+  }else{
+
+    plot<-ggplot(predict,aes(x=gl,y=rh))+
+      geom_line(colour="white")+
+      geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
+      theme_classic()+
+      theme(panel.background =element_rect(fill="#212529"),
+            plot.background = element_rect(fill="#212529"),
+            axis.title=element_text(colour = "white"),
+            axis.text=element_text(colour = "white"),
+            axis.line = element_line(colour = "white") )+
+
+      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
+                   linetype="dashed",colour="#ea801c")+
+      geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
+                 size=4,colour="#ea801c")+
+      geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",colour="white")+
+
+
+      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
+                   linetype="dashed",colour="#1a80bb")+
+      geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
+                 size=4,colour="#1a80bb")+
+      geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final",colour="white")+
+
+      labs(x="LiCl (g/l)",y="Relative Humidity (%)")
+
+
+  }
 
   plot
 }

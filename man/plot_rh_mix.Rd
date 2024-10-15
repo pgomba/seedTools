@@ -4,7 +4,7 @@
 \alias{plot_rh_mix}
 \title{Plots a basic graph showing LiCl after mixing two solutions}
 \usage{
-plot_rh_mix(rh1, vol1, rh2, vol2)
+plot_rh_mix(rh1, vol1, rh2, vol2, theme = "light")
 }
 \arguments{
 \item{rh1}{The relative humidity percentage value of solution number one}
@@ -14,6 +14,8 @@ plot_rh_mix(rh1, vol1, rh2, vol2)
 \item{rh2}{The relative humidity percentage value of solution number two}
 
 \item{vol2}{The volume 'in Litres' of solution rh2#'}
+
+\item{theme}{chose between light and dark plot background}
 }
 \value{
 a plot
