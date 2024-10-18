@@ -14,7 +14,8 @@ Config/Needs/website: rmarkdown
 Imports:
     magrittr,
     ggplot2,
-    dplyr
+    dplyr,
+    units
 Suggests: 
     knitr,
     rmarkdown
