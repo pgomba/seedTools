@@ -1,9 +1,9 @@
 Package: seedTools
 URL: https://pgomba.github.io/seedTools
 Type: Package
-Title: Go-To Toolbox for Seed Biology in R
-Version: 0.0.1
-Author: Pablo Gomez
+Title: Go-To Toolbox for Seed Biology
+Version: 0.1
+Author:  seedTools
 Maintainer: Pablo Gomez <pablogomezbr@hotmail.es>
 Description: seedTools aims to be a hub of R functions designed to facilitate common tasks in seed science. 
 License: CC BY 4.0

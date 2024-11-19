@@ -1,4 +1,4 @@
-# seedTools. Go-To Toolbox for Seed Biology in R <img src="man/figures/logo.png" align="right" height="138" alt="" />
+# seedTools. Go-To Toolbox for Seed Biology<img src="man/figures/logo.png" align="right" height="138" alt="" />
 
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/pgomba/seedTools/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pgomba/seedTools/actions/workflows/R-CMD-check.yaml)
