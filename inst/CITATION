@@ -1,0 +1,15 @@
+#' This is the citation for the package.
+#'
+#' To cite this package in publications, use:
+#'
+#' seedTools (2024). Go-To Toolbox for Seed Biology in R. v.0.1, https://github.com/pgomba/seedTools
+citation <- function() {
+  bibentry(
+    bibtype = "Manual",
+    title = "Go-To Toolbox for Seed Biology in R.",
+    year=2024,
+    author = person("seedTools"),
+    note = "v.0.1",
+    url = "https://github.com/pgomba/seedTools"
+  )
+}
