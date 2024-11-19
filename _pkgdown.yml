@@ -1,10 +1,15 @@
 url: https://pgomba.github.io/seedTools
 home:
-  title: seedTools. Go-To Toolbox for Seed Biology
+  title: Go-To Toolbox for Seed Biology
   description: An R package with a collection of functions to simplify seed biology related tasks
 template:
   bootstrap: 5
   light-switch: true
+  bslib:
+    primary: "#0054AD"
+    border-radius: 0.5rem
+    btn-border-radius: 0.25rem
+    danger: "#A6081A"
   opengraph:
     image:
       src: man/figures/logo.png
