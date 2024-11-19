@@ -16,5 +16,11 @@ Instead, the recommended approach is to cite individual functions directly in yo
 
 In your bibliography, reference the package as:
 
-*seedTools* (version). Go-To toolbox for seed siology in R. Retrieved from https://github.com/pgomba/seedTools.
+*seedTools* (2024). *Go-To toolbox for seed Biology*. v.0.1. Available at
+https://pgomba.github.io/seedTools/.
 
+# Collaborating
+
+To submit a function, feel free to push it to the GitHub repository. Alternatively, you can send me the `.R` file containing the function and, if possible, the relevant roxygen documentation. Whether you're submitting a single function or a family of related functions, please include a short article to guide users and provide a starting point. Whenever possible, keep function dependencies (libraries) to a minimum.
+
+ 

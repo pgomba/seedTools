@@ -1,5 +1,5 @@
 Package: seedTools
-URL: https://pgomba.github.io/seedTools
+URL: https://github.com/pgomba/seedTools, https://pgomba.github.io/seedTools/
 Type: Package
 Title: Go-To Toolbox for Seed Biology
 Version: 0.1

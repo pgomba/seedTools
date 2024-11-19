@@ -19,11 +19,7 @@
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Go-To Toolbox for Seed Biology">
 <meta name="description" content="An R package with a collection of functions to simplify seed biology related tasks">
 <meta property="og:description" content="An R package with a collection of functions to simplify seed biology related tasks">
-<meta property="og:image" content="https://pgomba.github.io/seedTools/reference/figures/logo.png">
-<meta property="og:image:alt" content="An R package with a collection of functions to simplify seed biology related tasks">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@pagomba">
-<meta name="twitter:site" content="@pagomba">
+<meta property="og:image" content="https://pgomba.github.io/seedTools/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -49,11 +45,20 @@
 <li><a class="dropdown-item" href="articles/coolbear_use.html">Calculating germination T50 using coolbear</a></li>
   </ul>
 </li>
-<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
-<li class="nav-item"><a class="external-link nav-link" href="http://twitter.com/pagomba" aria-label="Twitter"><span class="fa fa-twitter"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pgomba/seedTools" aria-label="Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
+</form></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
+</li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pgomba/seedTools/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -81,10 +86,22 @@
 <p>Instead, the recommended approach is to cite individual functions directly in your work. For example:</p>
 <p>“<em>We used the <code><a href="reference/rh_mix.html">rh_mix()</a></code> function from the seedTools package (<a href="https://github.com/pgomba/seedTools" class="external-link uri">https://github.com/pgomba/seedTools</a>).</em>”</p>
 <p>In your bibliography, reference the package as:</p>
-<p><em>seedTools</em> (version). Go-To toolbox for seed siology in R. Retrieved from <a href="https://github.com/pgomba/seedTools" class="external-link uri">https://github.com/pgomba/seedTools</a>.</p>
+<p><em>seedTools</em> (2024). <em>Go-To toolbox for seed Biology</em>. v.0.1. Available at <a href="https://pgomba.github.io/seedTools/" class="uri">https://pgomba.github.io/seedTools/</a>.</p>
+</div>
+<div class="section level1">
+<h1 id="collaborating">Collaborating<a class="anchor" aria-label="anchor" href="#collaborating"></a>
+</h1>
+<p>To submit a function, feel free to push it to the GitHub repository. Alternatively, you can send me the <code>.R</code> file containing the function and, if possible, the relevant roxygen documentation. Whether you’re submitting a single function or a family of related functions, please include a short article to guide users and provide a starting point. Whenever possible, keep function dependencies (libraries) to a minimum.</p>
 </div>
 
-  </main><aside class="col-md-3"><div class="license">
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/pgomba/seedTools/" class="external-link">Browse source code</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
