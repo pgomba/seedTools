@@ -3,7 +3,12 @@ URL: https://github.com/pgomba/seedTools, https://pgomba.github.io/seedTools/
 Type: Package
 Title: Go-To Toolbox for Seed Biology
 Version: 0.1
-Author:  seedTools
+Authors@R: c(
+    person("Pablo", "Gomez Barreiro", , "pablogomezbr@hotmail.es", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-3140-3326")),
+    person("Roberta", "Dayrell", role = "aut",
+           comment = c(ORCID = "0000-0002-4770-9100"))
+  )
 Maintainer: Pablo Gomez <pablogomezbr@hotmail.es>
 Description: seedTools aims to be a hub of R functions designed to facilitate common tasks in seed science. 
 License: CC BY 4.0
