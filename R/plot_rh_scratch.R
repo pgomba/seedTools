@@ -49,7 +49,7 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
             axis.title=element_text(colour = "white"),
             axis.text=element_text(colour = "white"),
             axis.line = element_line(colour = "white"),
-            theme(text = element_text(size=18)))+
+            text = element_text(size=18))+
 
       labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
