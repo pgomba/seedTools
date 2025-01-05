@@ -30,6 +30,7 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
       geom_point(x=as.numeric(data_point),y=desired_rh,size=4,fill="#ea801c",shape=21)+
 
       theme_classic()+
+      theme(text = element_text(size=18))+
 
       labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
@@ -47,7 +48,8 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
             plot.background = element_rect(fill="#212529",colour="#212529"),
             axis.title=element_text(colour = "white"),
             axis.text=element_text(colour = "white"),
-            axis.line = element_line(colour = "white") )+
+            axis.line = element_line(colour = "white"),
+            theme(text = element_text(size=18)))+
 
       labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 

@@ -38,19 +38,20 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       geom_line(colour="black")+
       geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
       theme_classic()+
+      theme(text = element_text(size=18))+
 
       geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#ea801c")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
                  size=4,colour="#ea801c")+
-      geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial")+
+      geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",size=5)+
 
 
       geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#1a80bb")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
                  size=4,colour="#1a80bb")+
-      geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final")+
+      geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final",size=5)+
 
       labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
@@ -60,6 +61,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       geom_line(colour="white")+
       geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
       theme_classic()+
+      theme(text = element_text(size=18))+
       theme(panel.background =element_rect(fill="#212529"),
             plot.background = element_rect(fill="#212529",colour="#212529"),
             axis.title=element_text(colour = "white"),
@@ -70,14 +72,14 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
                    linetype="dashed",colour="#ea801c")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
                  size=4,colour="#ea801c")+
-      geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",colour="white")+
+      geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",colour="white",size=5)+
 
 
       geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#1a80bb")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
                  size=4,colour="#1a80bb")+
-      geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final",colour="white")+
+      geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final",colour="white",size=5)+
 
       labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
