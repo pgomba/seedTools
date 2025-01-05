@@ -52,18 +52,18 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
    geom_line()+
 
    geom_line(data=predict2,linewidth=1.1,colour="darkred")+
-   geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=2,colour="#ea801c")+
+   geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=3,colour="#ea801c")+
 
    geom_line(data=predict3,linewidth=1.1,colour="green")+
-   geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=2,colour="#ea801c")+
+   geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=3,colour="#ea801c")+
 
    geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#1a80bb")+
-   geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40),label="Final")+
+   geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40),label="Final",size=5)+
    geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                 linetype="dashed",colour="#1a80bb")+
 
    theme_classic()+
-   theme(text = element_text(size=16))+
+   theme(text = element_text(size=18))+
    labs(y="Relative Humidity (%)", x="LiCl (g/L)")
 
   }else{
@@ -73,13 +73,13 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
       geom_line(colour="white")+
 
       geom_line(data=predict2,linewidth=1.1,colour="darkred")+
-      geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=2,colour="#ea801c")+
+      geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=3,colour="#ea801c")+
 
       geom_line(data=predict3,linewidth=1.1,colour="green")+
-      geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=2,colour="#ea801c")+
+      geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=3,colour="#ea801c")+
 
       geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#1a80bb")+
-      geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40,),label="Final",colour="white")+
+      geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+40,),label="Final",colour="white",size=5)+
       geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                    linetype="dashed",colour="#1a80bb")+
 
@@ -90,7 +90,7 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
             axis.title=element_text(colour = "white"),
             axis.text=element_text(colour = "white"),
             axis.line = element_line(colour = "white"),
-            text = element_text(size=16))
+            text = element_text(size=18))
 
 
  }
