@@ -15,8 +15,7 @@
 plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
 
   # data for plot
-  predict<-data.frame(rh=seq(11,99,1))%>%
-    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))*10)
+  predict<-rh_bonferroni()
 
   # predicting new mix
 
