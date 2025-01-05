@@ -16,8 +16,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
 
   #Curve
 
-  predict<-data.frame(rh=seq(11,99,1))%>%
-    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))*10)
+  predict<-rh_bonferroni()
 
   #Change curve
 
@@ -39,14 +38,14 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
 
 
-      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
+      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=11,yend=rh),
                    linetype="dashed",colour="#ea801c")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
                  size=4,colour="#ea801c")+
       geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",size=5)+
 
 
-      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
+      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=11,yend=rh),
                    linetype="dashed",colour="#1a80bb")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
                  size=4,colour="#1a80bb")+
