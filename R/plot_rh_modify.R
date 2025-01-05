@@ -52,7 +52,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
                  size=4,colour="#1a80bb")+
       geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final")+
 
-      labs(x="LiCl (g/l)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
   }else{
 
@@ -79,7 +79,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
                  size=4,colour="#1a80bb")+
       geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final",colour="white")+
 
-      labs(x="LiCl (g/l)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
 
   }

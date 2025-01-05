@@ -63,6 +63,7 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
                 linetype="dashed",colour="#1a80bb")+
 
    theme_classic()+
+   theme(text = element_text(size=16))+
    labs(y="Relative Humidity (%)", x="LiCl (g/L)")
 
   }else{
@@ -88,7 +89,8 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
             plot.background = element_rect(fill="#212529",colour="#212529"),
             axis.title=element_text(colour = "white"),
             axis.text=element_text(colour = "white"),
-            axis.line = element_line(colour = "white") )
+            axis.line = element_line(colour = "white"),
+            text = element_text(size=16))
 
 
  }
