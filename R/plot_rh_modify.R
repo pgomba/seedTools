@@ -38,18 +38,19 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
 
 
-      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=11,yend=rh),
+      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#ea801c")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
                  size=4,colour="#ea801c")+
       geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",size=5)+
 
 
-      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=11,yend=rh),
+      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#1a80bb")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
                  size=4,colour="#1a80bb")+
       geom_text(data=input%>%filter(value=="final"),aes(x=gl+40),label="Final",size=5)+
+      scale_y_continuous(limits = c(0,100))+
 
       theme_classic()+
       theme(text = element_text(size=18))+
@@ -62,14 +63,14 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       geom_line(colour="white")+
       geom_line(data=predict2,linewidth=1.1,colour="darkred",linetype="dashed")+
 
-      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=11,yend=rh),
+      geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#ea801c")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
                  size=4,colour="#ea801c")+
       geom_text(data=input%>%filter(value=="initial"),aes(x=gl+40),label="Initial",colour="white",size=5)+
 
 
-      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=11,yend=rh),
+      geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#1a80bb")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
                  size=4,colour="#1a80bb")+
@@ -81,6 +82,8 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
             axis.text=element_text(colour = "white"),
             axis.line = element_line(colour = "white"),
             text = element_text(size=18))+
+
+      scale_y_continuous(limits = c(0,100))+
 
       labs(x="LiCl (g/L)",y="Relative Humidity (%)")
 
