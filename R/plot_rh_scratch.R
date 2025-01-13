@@ -33,7 +33,7 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
       theme_classic()+
       theme(text = element_text(size=18))+
 
-      labs(x="LiCl (g/L)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/L)",y="RH (%)")
 
   }else{
 
@@ -53,7 +53,7 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
             text = element_text(size=18))+
       scale_y_continuous(limits = c(0,100))+
 
-      labs(x="LiCl (g/L)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/L)",y="RH (%)")
 
 
   }

@@ -64,7 +64,7 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
    theme_classic()+
    theme(text = element_text(size=18))+
    scale_y_continuous(limits = c(0,100))+
-   labs(y="Relative Humidity (%)", x="LiCl (g/L)")
+   labs(y="RH (%)", x="LiCl (g/L)")
 
   }else{
 
@@ -84,7 +84,7 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light"){
                    linetype="dashed",colour="#1a80bb")+
 
       theme_classic()+
-      labs(y="Relative Humidity (%)", x="LiCl (g/L)")+
+      labs(y="RH (%)", x="LiCl (g/L)")+
       scale_y_continuous(limits = c(0,100))+
       theme(panel.background =element_rect(fill="#212529"),
             plot.background = element_rect(fill="#212529",colour="#212529"),

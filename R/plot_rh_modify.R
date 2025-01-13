@@ -55,7 +55,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
       theme_classic()+
       theme(text = element_text(size=18))+
 
-      labs(x="LiCl (g/L)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/L)",y="RH (%)")
 
   }else{
 
@@ -85,7 +85,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light"){
 
       scale_y_continuous(limits = c(0,100))+
 
-      labs(x="LiCl (g/L)",y="Relative Humidity (%)")
+      labs(x="LiCl (g/L)",y="RH (%)")
 
 
   }
