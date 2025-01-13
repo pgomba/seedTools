@@ -2,21 +2,30 @@
 #'
 #' @param desired_rh The percentage value of the desired relative humidity
 #' @param theme chose between light and dark plot background
+#' #' @param units Choose between "g/L" (default) or "g/100ml"
 #' @return a plot
 #' @import magrittr ggplot2 dplyr units
 #' @export
 #' @examples
 #' plot_rh_scratch(50,theme="dark")
 
-plot_rh_scratch<-function(desired_rh,theme="light"){
+plot_rh_scratch<-function(desired_rh,theme="light",units="g/L"){
 
   #Main curve
 
-  predict<-rh_bonferroni()
+  predict<-rh_bonferroni(units=units)
 
   #data point
 
-  data_point<-rh_scratch(desired_rh,volume=1,verbose = F)
+  data_point<-rh_scratch(desired_rh,volume=1,verbose = F,units)
+
+  # Autolabel
+
+  if (units=="g/L") {
+    x_axis<-"LiCl (g/L)"
+  }else{
+    x_axis<-"LiCl (g/100 ml)"
+  }
 
   # Plot
 
@@ -33,7 +42,7 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
       theme_classic()+
       theme(text = element_text(size=18))+
 
-      labs(x="LiCl (g/L)",y="RH (%)")
+      labs(x=x_axis,y="RH (%)")
 
   }else{
 
@@ -53,7 +62,7 @@ plot_rh_scratch<-function(desired_rh,theme="light"){
             text = element_text(size=18))+
       scale_y_continuous(limits = c(0,100))+
 
-      labs(x="LiCl (g/L)",y="RH (%)")
+      labs(x=x_axis,y="RH (%)")
 
 
   }
