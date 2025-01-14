@@ -2,7 +2,7 @@
 #'
 #' @param desired_rh The percentage value of the desired relative humidity
 #' @param theme chose between light and dark plot background
-#' #' @param units Choose between "g/L" (default) or "g/100ml"
+#' @param units select LiCl concentration to be "g/L" or "g/100ml)
 #' @return a plot
 #' @import magrittr ggplot2 dplyr units
 #' @export
@@ -17,15 +17,17 @@ plot_rh_scratch<-function(desired_rh,theme="light",units="g/L"){
 
   #data point
 
-  data_point<-rh_scratch(desired_rh,volume=1,verbose = F,units)
+  data_point<-rh_scratch(desired_rh,volume=1,verbose = F)
 
-  # Autolabel
-
-  if (units=="g/L") {
-    x_axis<-"LiCl (g/L)"
-  }else{
-    x_axis<-"LiCl (g/100 ml)"
+  if (units == "g/L") {
+    x_axis <- "LiCl (g/L)"
+  } else if (units == "g/100ml") {
+    x_axis <- "LiCl (g/100ml)"
+    data_point<-data_point/10
+  } else {
+    stop("Invalid unit. Please specify 'g/L' or 'g/100ml'.")
   }
+
 
   # Plot
 

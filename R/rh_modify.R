@@ -17,13 +17,15 @@ rh_modify<-function(initial_rh,desired_rh,initial_volume,verbose=TRUE){
   message("Reminder: Ensure all values are in g. and L.")
     }
 
-  initial_conc<-(28.6565 + 16.8639 * log((107.7549/(initial_rh - 8.3123)) - 1))*10 #g/ml
-  desired_conc<-(28.6565 + 16.8639 * log((107.7549/(desired_rh - 8.3123)) - 1))*10 #g/ml
+  initial_conc<-set_units((28.6565 + 16.8639 * log((107.7549/(initial_rh - 8.3123)) - 1)),"g/100ml")
+  desired_conc<-set_units((28.6565 + 16.8639 * log((107.7549/(desired_rh - 8.3123)) - 1)),"g/100ml")
+
+  starting_volume<-set_units(initial_volume,"L")
 
   if (initial_conc>desired_conc) {
 
-    final_volume<-(initial_conc*initial_volume)/desired_conc
-    add_w<-final_volume-initial_volume
+    final_volume<-set_units((initial_conc*starting_volume)/desired_conc,"L")
+    add_w<-final_volume-starting_volume
 
     text<- paste("Volume of water to be added to your solution:",round(add_w,2),"L.")
 

@@ -4,12 +4,14 @@
 \alias{plot_rh_scratch}
 \title{Plots a basic graph showing desired relative humidity vs LiCl concentration}
 \usage{
-plot_rh_scratch(desired_rh, theme = "light")
+plot_rh_scratch(desired_rh, theme = "light", units = "g/L")
 }
 \arguments{
 \item{desired_rh}{The percentage value of the desired relative humidity}
 
 \item{theme}{chose between light and dark plot background}
+
+\item{units}{select LiCl concentration to be "g/L" or "g/100ml)}
 }
 \value{
 a plot
