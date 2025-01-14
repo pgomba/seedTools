@@ -4,7 +4,7 @@
 \alias{plot_rh_modify}
 \title{Plots a basic graph showing desired changes in LiCl solution}
 \usage{
-plot_rh_modify(rh_initial, desired_rh, theme = "light")
+plot_rh_modify(rh_initial, desired_rh, theme = "light", units = "g/L")
 }
 \arguments{
 \item{rh_initial}{The relative humidity percentage value of the solution to be modified}
@@ -12,6 +12,8 @@ plot_rh_modify(rh_initial, desired_rh, theme = "light")
 \item{desired_rh}{The percentage value of the desired relative humidity}
 
 \item{theme}{chose between light and dark plot background}
+
+\item{units}{select LiCl concentration to be "g/L" or "g/100ml)}
 }
 \value{
 a plot

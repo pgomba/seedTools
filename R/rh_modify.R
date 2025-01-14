@@ -26,19 +26,20 @@ rh_modify<-function(initial_rh,desired_rh,initial_volume,verbose=TRUE){
 
     final_volume<-set_units((initial_conc*starting_volume)/desired_conc,"L")
     add_w<-final_volume-starting_volume
+    add_what<-"water"
 
-    text<- paste("Volume of water to be added to your solution:",round(add_w,2),"L.")
+    add<-data.frame(Add=add_what,Quantity=add_w)
 
 
   }else{
 
 
-    LiCl_to_add<-(desired_conc-initial_conc)*initial_volume
+    LiCl_to_add<-(desired_conc-initial_conc)*starting_volume
+    add_what<-"LiCl"
 
-    text<-paste("Lithium chloride to be added:",round(LiCl_to_add,2),"g.")
-
+    add<-data.frame(Add=add_what,Quantity=LiCl_to_add)
 
   }
 
-  text
+  add
 }

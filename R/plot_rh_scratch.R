@@ -11,9 +11,11 @@
 
 plot_rh_scratch<-function(desired_rh,theme="light",units="g/L"){
 
+
   #Main curve
 
-  predict<-rh_bonferroni(units=units)
+
+  predict<-rh_bonferroni(bf_units=units)
 
   #data point
 

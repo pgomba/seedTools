@@ -1,11 +1,11 @@
 #' Internal function in charge of creating data points using Bonferronis sigmoidal equation obtained from Hay et al 2008 data
-#' @param units Choose between "g/L" (default) or "g/100ml"
+#' @param bf_units Choose between "g/L" (default) or "g/100ml"
 #' @noRd
 #'
 
-rh_bonferroni<-function(units="g/L"){
+rh_bonferroni<-function(bf_units="g/L"){
 
-  if (units=="g/L") {
+  if (bf_units=="g/L") {
     multi<-10
   }else{
     multi<-1
