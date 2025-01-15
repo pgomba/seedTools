@@ -15,21 +15,25 @@
 
 rh_mix<-function(rh1,vol1,rh2,vol2,verbose=TRUE){
 
+  install_unit("g/100ml", "0.1*g/L")
+
   message("Reminder: Ensure volumes are L.")
+  volume1<-set_units(vol1,"L")
+  volume2<-set_units(vol2,"L")
 
-  lc_conc1<-(28.6565 + 16.8639 * log((107.7549/(rh1 - 8.3123)) - 1))*10
-  lc_g1<-lc_conc1*vol1
+  lc_conc1<-set_units((28.6565 + 16.8639 * log((107.7549/(rh1 - 8.3123)) - 1)),"g/100ml")
+  lc_g1<-lc_conc1*volume1
 
-  lc_conc2<-(28.6565 + 16.8639 * log((107.7549/(rh2 - 8.3123)) - 1))*10
-  lc_g2<-lc_conc2*vol2
+  lc_conc2<-set_units((28.6565 + 16.8639 * log((107.7549/(rh2 - 8.3123)) - 1)),"g/100ml")
+  lc_g2<-lc_conc2*volume2
 
-  new_conc<-(lc_g1+lc_g2)/(vol1+vol2)
+  new_conc<-(lc_g1+lc_g2)/(volume1+volume2)
+  new_conc_g100ml<-as.numeric(new_conc)/10
 
-  new_rh<- (116.0672 - 8.3123) / (1 + exp(((new_conc/10) - 28.6565) / 16.8639)) + 8.3123
 
-  text<-paste0("New solution will achieve a relative humidity of ", round(new_rh,2),"%")
+  new_rh<- (116.0672 - 8.3123) / (1 + exp(((new_conc_g100ml) - 28.6565) / 16.8639)) + 8.3123
 
-  text
+  new_rh
 
 }
 
