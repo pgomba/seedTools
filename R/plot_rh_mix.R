@@ -73,6 +73,8 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light",units="g/L"){
    geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+nudg),label="Final",size=5)+
    geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                 linetype="dashed",colour="#1a80bb")+
+   geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=new_conc,xend=new_conc,y=0,yend=new_rh),
+                linetype="dashed",colour="#1a80bb")+
 
    theme_classic()+
    theme(text = element_text(size=18))+
@@ -95,6 +97,8 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light",units="g/L"){
       geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+nudg,),label="Final",colour="white",size=5)+
       geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                    linetype="dashed",colour="#1a80bb")+
+      geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=new_conc,xend=new_conc,y=0,yend=new_rh),
+                   linetype="dashed",colour="#1a80bb")+
 
       theme_classic()+
       labs(y="RH (%)", x=x_axis)+
@@ -105,7 +109,6 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light",units="g/L"){
             axis.text=element_text(colour = "white"),
             axis.line = element_line(colour = "white"),
             text = element_text(size=18))
-
 
  }
 
