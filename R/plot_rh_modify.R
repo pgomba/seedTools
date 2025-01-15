@@ -18,7 +18,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light",units="g/L"){
 
   #Curve
 
-  predict<-rh_bonferroni(bf_units=units)
+  predict<- rh_bonferroni(bf_units=units)
 
   if (units == "g/L") {
     multi <- 10
@@ -35,7 +35,7 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light",units="g/L"){
   #Change curve
 
   predict2<-data.frame(rh=seq(rh_initial,desired_rh,by=sign(desired_rh-rh_initial)))%>%
-    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1)))*multi
+    mutate(gl=(28.6565 + 16.8639 * log((107.7549/(rh - 8.3123)) - 1))*multi)
 
   #Input points
 
