@@ -40,7 +40,7 @@ plot_rh_scratch<-function(desired_rh,theme="light",units="g/L"){
 
       geom_segment(x=as.numeric(data_point),xend=0,y=desired_rh,yend=desired_rh,linetype="dashed" )+
       geom_segment(x=as.numeric(data_point),xend=as.numeric(data_point),y=desired_rh,yend=0,linetype="dashed")+
-      geom_point(x=as.numeric(data_point),y=desired_rh,size=4,fill="#ea801c",shape=21)+
+      geom_point(x=as.numeric(data_point),y=desired_rh,size=4,fill="#EE7733",shape=21)+
       scale_y_continuous(limits = c(0,100))+
 
       theme_classic()+
@@ -55,7 +55,7 @@ plot_rh_scratch<-function(desired_rh,theme="light",units="g/L"){
 
       geom_segment(x=as.numeric(data_point),xend=0,y=desired_rh,yend=desired_rh,linetype="dashed",colour="white" )+
       geom_segment(x=as.numeric(data_point),xend=as.numeric(data_point),y=desired_rh,yend=0,linetype="dashed",colour="white")+
-      geom_point(x=as.numeric(data_point),y=desired_rh,size=4,fill="#ea801c",shape=21)+
+      geom_point(x=as.numeric(data_point),y=desired_rh,size=4,fill="#EE7733",shape=21)+
 
       theme_classic()+
       theme(panel.background =element_rect(fill="#212529"),
