@@ -141,12 +141,12 @@ f_sdt <- function(evalName, data){
 
 }
 
-#' Unknown 2
+#' Calculate germination indices 
 #' @param evalName A character that prepend scoring time
 #' @param SeedN Number of seeds per replicate, or dataframe column with seed number per dish
 #' @param data dataframe with data
-
-f_germ_sum <- function(SeedN, evalName, data){
+#' @export
+f_germ_sum <- function(SeedN = "NSeeds", evalName = "D", data){
 
   evf <- data %>%
     dplyr::select(!starts_with({{evalName}}))
