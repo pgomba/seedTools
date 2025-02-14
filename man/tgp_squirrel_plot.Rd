@@ -8,6 +8,10 @@ tgp_squirrel_plot(file, start = NULL, end = NULL)
 }
 \arguments{
 \item{file}{A character string specifying the path to the CSV file.}
+
+\item{start}{Select start time of graph threshold}
+
+\item{end}{Select end time for graph threshold#'}
 }
 \value{
 A plot
