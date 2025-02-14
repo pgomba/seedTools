@@ -3,6 +3,8 @@
 #' Reads a CSV file and plots temperature gradient plate data
 #'
 #' @param file A character string specifying the path to the CSV file.
+#' @param start Select start time of graph threshold
+#' @param end Select end time for graph threshold
 #'
 #'
 #' @return A plot
