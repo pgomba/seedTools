@@ -20,7 +20,11 @@ Imports:
     magrittr,
     ggplot2,
     dplyr,
-    units
+    units,
+    readr,
+    scales,
+    tidyr,
+    lubridate
 Suggests: 
     knitr,
     rmarkdown

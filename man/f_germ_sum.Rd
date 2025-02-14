@@ -2,9 +2,9 @@
 % Please edit documentation in R/rd_functions.R
 \name{f_germ_sum}
 \alias{f_germ_sum}
-\title{Unknown 2}
+\title{Calculate germination indices}
 \usage{
-f_germ_sum(SeedN, evalName, data)
+f_germ_sum(SeedN = "NSeeds", evalName = "D", data)
 }
 \arguments{
 \item{SeedN}{Number of seeds per replicate, or dataframe column with seed number per dish}
@@ -14,5 +14,5 @@ f_germ_sum(SeedN, evalName, data)
 \item{data}{dataframe with data}
 }
 \description{
-Unknown 2
+Calculate germination indices
 }

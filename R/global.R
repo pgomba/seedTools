@@ -1,3 +1,9 @@
 utils::globalVariables(c("rh",
                          "value",
-                         "solution"))
+                         "solution",
+                         ".",
+                         "Date",
+                         "Temperature",
+                         "Probe",
+                         "start",
+                         "end"))
