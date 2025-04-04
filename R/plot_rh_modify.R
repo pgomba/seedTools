@@ -55,14 +55,14 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light",units="g/L"){
       geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#ea801c")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
-                 size=4,colour="#ea801c")+
+                 size=4, shape=21, colour="black",fill="#ea801c")+
       geom_text(data=input%>%filter(value=="initial"),aes(x=gl),label="Initial",size=5,nudge_x = nudg)+
 
 
       geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#4477AA")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
-                 size=4,colour="#4477AA")+
+                 size=4, shape=21, colour="black", fill="#4477AA")+
       geom_text(data=input%>%filter(value=="final"),aes(x=gl),label="Final",size=5,nudge_x = nudg)+
       scale_y_continuous(limits = c(0,100))+
 
@@ -80,14 +80,14 @@ plot_rh_modify<-function(rh_initial,desired_rh,theme="light",units="g/L"){
       geom_segment(data=input%>%filter(value=="initial"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#EE7733")+
       geom_point(data=input%>%filter(value=="initial"),aes(x=gl,y=rh),
-                 size=4,colour="#EE7733")+
+                 size=4,shape=21,colour="black",fill="#EE7733")+
       geom_text(data=input%>%filter(value=="initial"),aes(x=gl),label="Initial",colour="white",size=5,nudge_x = nudg)+
 
 
       geom_segment(data=input%>%filter(value=="final"),aes(x=gl,xend=gl,y=0,yend=rh),
                    linetype="dashed",colour="#4477AA")+
       geom_point(data=input%>%filter(value=="final"),aes(x=gl,y=rh),
-                 size=4,colour="#4477AA")+
+                 size=4, shape=21, colour="black",fill="#4477AA")+
       geom_text(data=input%>%filter(value=="final"),aes(x=gl),label="Final",colour="white",size=5,nudge_x = nudg)+
       theme_classic()+
       theme(panel.background =element_rect(fill="#212529"),

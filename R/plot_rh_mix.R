@@ -63,13 +63,16 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light",units="g/L"){
 
    geom_line()+
 
-   geom_line(data=predict2,linewidth=1.1,colour="#BB5566")+
-   geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=3,colour="#EE7733")+
+   geom_line(data=predict2,linewidth=1.1,colour="#BB5566",linetype="dashed")+
+   geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=3,
+              shape=21, colour="black", fill="#EE7733")+
 
-   geom_line(data=predict3,linewidth=1.1,colour="#009988")+
-   geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=3,colour="#EE7733")+
+   geom_line(data=predict3,linewidth=1.1,colour="#009988",linetype="dashed")+
+   geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=3,
+              shape=21,colour="black",fill="#EE7733")+
 
-   geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#4477AA")+
+   geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,
+              shape=21,colour="black",fill="#4477AA")+
    geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+nudg),label="Final",size=5)+
    geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                 linetype="dashed",colour="#4477AA")+
@@ -88,12 +91,15 @@ plot_rh_mix<-function(rh1,vol1,rh2,vol2,theme="light",units="g/L"){
       geom_line(colour="white")+
 
       geom_line(data=predict2,linewidth=1.1,colour="#BB5566")+
-      geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=3,colour="#EE7733")+
+      geom_point(data=data_to_plot%>%filter(solution=="Solution2"), aes(y=rh1,x=lc_conc1),size=3,
+                 shape=21, colour="black", fill="#EE7733")+
 
       geom_line(data=predict3,linewidth=1.1,colour="#009988")+
-      geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=3,colour="#EE7733")+
+      geom_point(data=data_to_plot%>%filter(solution=="Solution1"), aes(y=rh2,x=lc_conc2),size=3,
+                 shape=21, colour="black", fill="#EE7733")+
 
-      geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,colour="#4477AA")+
+      geom_point(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh,x=new_conc),size=4,
+                 shape=21,colour="black", fill="#4477AA")+
       geom_text(data=data_to_plot%>%filter(solution=="Final"), aes(y=new_rh+1,x=new_conc+nudg,),label="Final",colour="white",size=5)+
       geom_segment(data=data_to_plot%>%filter(solution=="Final"),aes(x=0,xend=new_conc,y=new_rh,yend=new_rh),
                    linetype="dashed",colour="#4477AA")+
