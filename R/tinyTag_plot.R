@@ -3,7 +3,7 @@
 #' This function reads TinyTag CSV data (e.g. from growth chambers),
 #' cleans it, and generates a dual-axis ggplot showing temperature and humidity.
 #'
-#' @param table Object with Path to the CSV file to read.
+#' @param file_path Object with Path to the CSV file to read.
 #' @param title Plot title. Defaults to "TinyTag Data".
 #'
 #' @return A ggplot object.

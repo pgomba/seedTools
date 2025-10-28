@@ -7,9 +7,9 @@
 TinyTag_plot(file_path, title = "TinyTag Data")
 }
 \arguments{
-\item{title}{Plot title. Defaults to "TinyTag Data".}
+\item{file_path}{Object with Path to the CSV file to read.}
 
-\item{table}{Object with Path to the CSV file to read.}
+\item{title}{Plot title. Defaults to "TinyTag Data".}
 }
 \value{
 A ggplot object.
