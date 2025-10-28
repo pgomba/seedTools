@@ -14,7 +14,7 @@
 #' TinyTag_plot("Growth chamber/Large_growth_chamber.csv", title = "Large Growth Chamber")
 #' }
 
-TinyTag_plot <- function(file_path, title = "TinyTag Data") {
+tinyTag_plot <- function(file_path, title = "TinyTag Data") {
   # Load required packages
   # Read and preprocess data
   data <- read_csv(
