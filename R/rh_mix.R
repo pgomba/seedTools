@@ -17,7 +17,10 @@ rh_mix<-function(rh1,vol1,rh2,vol2,verbose=TRUE){
 
   install_unit("g/100ml", "0.1*g/L")
 
-  message("Reminder: Ensure volumes are L.")
+  if (verbose) {
+      message("Volume and mass must be entered consistently: either in liters (L) and grams (g), or in milliliters (mL) and milligrams (mg).")
+    }
+
   volume1<-set_units(vol1,"L")
   volume2<-set_units(vol2,"L")
 
