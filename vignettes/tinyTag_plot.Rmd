@@ -1,5 +1,5 @@
 ---
-title: "Plotting data from TinyTags fi"
+title: "Plotting temperature and humidity data from TinyTags"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{tinyTag_plot}
