@@ -6,4 +6,10 @@ utils::globalVariables(c("rh",
                          "Temperature",
                          "Probe",
                          "start",
-                         "end"))
+                         "end",
+                         "cols",
+                         "col_number",
+                         "col_skip",
+                         "Property",
+                         "Datetime",
+                         "Humidity"))

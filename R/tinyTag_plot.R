@@ -17,7 +17,7 @@
 tinyTag_plot <- function(file_path, title = "TinyTag Data") {
   # Load required packages
   # Read and preprocess data
-  data <- read_csv(
+  data <- readr::read_csv(
     file_path,
     col_types = cols(
       Temperature = col_number(),
