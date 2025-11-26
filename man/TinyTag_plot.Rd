@@ -2,14 +2,18 @@
 % Please edit documentation in R/tinyTag_plot.R
 \name{tinyTag_plot}
 \alias{tinyTag_plot}
-\title{TinyTag Plot}
+\title{TinyTag Plot Timeframe}
 \usage{
-tinyTag_plot(file_path, title = "TinyTag Data")
+tinyTag_plot(file_path, title = "TinyTag Data", datefrom = NULL, dateto = NULL)
 }
 \arguments{
 \item{file_path}{Object with Path to the CSV file to read.}
 
 \item{title}{Plot title. Defaults to "TinyTag Data".}
+
+\item{datefrom}{Object with date and time (format: yyyy-mm-dd or yyyy-mm-dd hh:mm:ss) from which you want to select data to show in the ggplot}
+
+\item{dateto}{Object with date and time (formatyyyy-mm-dd or yyyy-mm-dd hh:mm:ss) until which you want to select data to show in the ggplot}
 }
 \value{
 A ggplot object.
@@ -17,6 +21,8 @@ A ggplot object.
 \description{
 This function reads TinyTag CSV data (e.g. from growth chambers),
 cleans it, and generates a dual-axis ggplot showing temperature and humidity.
+It can also allow you to select specific date and time frames within which
+you want to observe your data#
 }
 \examples{
 \dontrun{
