@@ -60,7 +60,7 @@ if (is.null(datefrom)) {
     geom_line(aes(y = (Humidity - 30) / 3 + 22, color = "Humidity (%RH)"),
               linetype = "dashed", linewidth = 1) +
     scale_y_continuous(
-      name = "Temperature (°C)",
+      name = "Temperature (\u00B0C)",
       breaks = seq(0, 50, by = 5),   # adjust limits to your actual data
       sec.axis = sec_axis(
         ~ (. - 22) * 3 + 30,
