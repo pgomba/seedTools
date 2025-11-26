@@ -60,8 +60,13 @@ if (is.null(datefrom)) {
     geom_line(aes(y = (Humidity - 30) / 3 + 22, color = "Humidity (%RH)"),
               linetype = "dashed", linewidth = 1) +
     scale_y_continuous(
-      name = "Temperature (\u00B0C)",
-      sec.axis = sec_axis(~ (. - 22) * 3 + 30, name = "Humidity (%RH)")
+      name = "Temperature (°C)",
+      breaks = seq(0, 50, by = 5),   # adjust limits to your actual data
+      sec.axis = sec_axis(
+        ~ (. - 22) * 3 + 30,
+        name = "Humidity (%RH)",
+        breaks = seq(0, 90, by = 5) # these are in secondary-axis units (humidity)
+      )
     ) +
     scale_color_manual(
       name = "",
@@ -74,7 +79,8 @@ if (is.null(datefrom)) {
     theme_classic()+
     theme(
       legend.position = "bottom",
-      legend.title = element_blank()
+      legend.title = element_blank(),
+      axis.text.x =   element_text(angle = 90)
     )
 
   return(p)
