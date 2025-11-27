@@ -12,8 +12,8 @@
 #' @param dateto Object with date and time (formatyyyy-mm-dd or yyyy-mm-dd hh:mm:ss) until which you want to select data to show in the ggplot
 #'
 #' @return A ggplot object.
+#' @importFrom readr read_csv
 #' @export
-#'
 #' @examples
 #' \dontrun{
 #' TinyTag_plot("Growth chamber/Large_growth_chamber.csv", title = "Large Growth Chamber")
